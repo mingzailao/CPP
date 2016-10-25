@@ -26,7 +26,6 @@ void wordTransformation()
     std::unordered_map<string, string> trans_map;
     for (string key, value; ifs_map >> key && getline(ifs_map, value); )
         if (value.size() > 1) trans_map[key] = value.substr(1).substr(0, value.find_last_not_of(' '));
-    
     for (string text, word; getline(ifs_content, text); std::cout << std::endl)
         for (std::istringstream iss(text); iss >> word; ) {
             auto map_it = trans_map.find(word);
